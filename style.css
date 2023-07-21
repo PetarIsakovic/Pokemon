@@ -23,14 +23,14 @@
 }
 
 .modalWindow{
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    height: 100vh;
     background-color: rgba(100, 100, 111, 0.5);
     margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .innerWindow{
@@ -69,4 +69,12 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width: 940px) {
+    .innerWindow{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
 }
