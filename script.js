@@ -30,6 +30,7 @@ fetch(URL)
                     actualDiv.appendChild(actualName);
                     actualDiv.appendChild(actualImage);
                     actualDiv.onclick = function(){
+
                         const modalWindow = document.createElement("div");
                         const innerWindow = document.createElement("div");
 
@@ -78,12 +79,50 @@ fetch(URL)
                         innerWindow.appendChild(leftSide);
                         innerWindow.appendChild(rightSide);
 
-                        modalWindow.onclick = function(e){
+                        innerWindow.style.marginTop = '100px';
+
+                        innerWindow.style.opacity = '0';
+
+
+                        setTimeout(() => {
+                            innerWindow.style.marginTop = '0px';
+                            innerWindow.style.opacity = '1';
+                          }, "1");
+                          
+                          modalWindow.onclick = function(e){
+
 
                             if(e.target == modalWindow){
                                 modalWindow.remove();
                             }
+                            // else{
+                                
+                            // }
                         }
+                          
+
+                        // var inter = setInterval(popOut, 1);
+
+                        // innerWindow.style.marginTop = '300px';
+
+                        // var counter = 0;
+
+                        // function popOut(){
+                        //     innerWindow.style.marginTop = (parseInt(innerWindow.style.marginTop) - 5)+ 'px';
+                        //     innerWindow.style.opacity = counter/58;
+
+                        //     counter++;
+
+                        //     if(counter == 300/5){
+                        //         clearInterval(inter);
+                        //     }
+
+                        //     // modalWindow.style.transform = modalWindow.style.transform
+
+                        // }
+
+                        
+                        
                         
                     }
                     areaForAll.appendChild(actualDiv);
@@ -95,4 +134,6 @@ fetch(URL)
     .catch(e => {
         console.log(e);
     })
+
+
 
